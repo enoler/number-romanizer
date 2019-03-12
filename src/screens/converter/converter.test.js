@@ -30,4 +30,34 @@ describe('number-romanizer', () => {
     expect(toBeNaN(invalidOver3999)).toBeTruthy();
     expect(toBeNaN(invalidUnder1)).toBeTruthy();
   });
+
+  it('It should convert the basic numbers', () => {
+    const I = converterService.getRomanNumber(1);
+    const IV = converterService.getRomanNumber(4);
+    const V = converterService.getRomanNumber(5);
+    const IX = converterService.getRomanNumber(9);
+    const X = converterService.getRomanNumber(10);
+    const XL = converterService.getRomanNumber(40);
+    const L = converterService.getRomanNumber(50);
+    const XC = converterService.getRomanNumber(90);
+    const C = converterService.getRomanNumber(100);
+    const CD = converterService.getRomanNumber(400);
+    const D = converterService.getRomanNumber(500);
+    const CM = converterService.getRomanNumber(900);
+    const M = converterService.getRomanNumber(1000);
+
+    expect(I).toBe('I');
+    expect(IV).toBe('IV');
+    expect(V).toBe('V');
+    expect(IX).toBe('IX');
+    expect(X).toBe('X');
+    expect(XL).toBe('XL');
+    expect(L).toBe('L');
+    expect(XC).toBe('XC');
+    expect(C).toBe('C');
+    expect(CD).toBe('CD');
+    expect(D).toBe('D');
+    expect(CM).toBe('CM');
+    expect(M).toBe('M');
+  });
 });
