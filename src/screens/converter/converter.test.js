@@ -60,4 +60,20 @@ describe('number-romanizer', () => {
     expect(CM).toBe('CM');
     expect(M).toBe('M');
   });
+
+  it('It should work with rest of numbers', () => {
+    const VIII = converterService.getRomanNumber(8);
+    const XLVI = converterService.getRomanNumber(46);
+    const XCIII = converterService.getRomanNumber(93);
+    const CDXLIV = converterService.getRomanNumber(444);
+    const DCCLXXVII = converterService.getRomanNumber(777);
+    const MMMDCCXLVII = converterService.getRomanNumber(3747);
+
+    expect(VIII).toBe('VIII');
+    expect(XLVI).toBe('XLVI');
+    expect(XCIII).toBe('XCIII');
+    expect(CDXLIV).toBe('CDXLIV');
+    expect(DCCLXXVII).toBe('DCCLXXVII');
+    expect(MMMDCCXLVII).toBe('MMMDCCXLVII');
+  });
 });

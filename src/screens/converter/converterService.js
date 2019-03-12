@@ -18,8 +18,16 @@ export default class ConverterService {
   }
 
   calculateRomanNumber (intNumber) {
-    return Object.keys(this.ROMAN_INTEGER_MAP).find((romanKey) =>
-      this.ROMAN_INTEGER_MAP[romanKey] === intNumber);
+    let romanNumber = '';
+    let currentInteger = intNumber;
+
+    while (currentInteger > 0) {
+      const { integer, roman } = this.getSingleRomanNumber(currentInteger);
+      romanNumber += roman;
+      currentInteger -= integer;
+    }
+
+    return romanNumber;
   }
 
   getRomanNumber (intNumber) {
@@ -32,5 +40,17 @@ export default class ConverterService {
       default:
         return this.calculateRomanNumber(intNumber);
     }
+  }
+
+  getSingleRomanNumber (singleInteger) {
+    const index = Object.keys(this.ROMAN_INTEGER_MAP).findIndex((key) =>
+    this.ROMAN_INTEGER_MAP[key] <= singleInteger);
+
+    const romanNumber = Object.keys(this.ROMAN_INTEGER_MAP)[index];
+
+    return {
+      integer: this.ROMAN_INTEGER_MAP[romanNumber],
+      roman: romanNumber
+    };
   }
 }
