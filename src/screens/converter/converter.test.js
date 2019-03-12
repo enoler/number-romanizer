@@ -22,4 +22,12 @@ describe('number-romanizer', () => {
     expect(toBeNaN(invalidString)).toBeTruthy();
     expect(toBeNaN(invalidObject)).toBeTruthy();
   });
+
+  it('It should accept ONLY numbers between 0 and 4000', () => {
+    const invalidOver3999 = converterService.getRomanNumber(4000);
+    const invalidUnder1 = converterService.getRomanNumber(0);
+
+    expect(toBeNaN(invalidOver3999)).toBeTruthy();
+    expect(toBeNaN(invalidUnder1)).toBeTruthy();
+  });
 });
