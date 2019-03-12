@@ -1,0 +1,4 @@
+{
+    "name": "converter-screen",
+    "main": "converterController.js"
+}
