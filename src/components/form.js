@@ -19,12 +19,13 @@ export default class FormComponent extends Component {
   render () {
     return (
       <Form>
+        <h1>Number Romanizer</h1>
         <Form.Group controlId='formInputInteger'>
-          <Form.Label>Integer number</Form.Label>
+          <Form.Label>Please introduce an integer number:</Form.Label>
           <Form.Control
             size='lg'
             type='number'
-            placeholder='Please introduce an integer number'
+            placeholder='1-3999'
             onChange={(event) => this.onChange(event)} />
         </Form.Group>
 

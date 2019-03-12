@@ -4,8 +4,11 @@ import Form from '../../components/form';
 import './converterStyles.css';
 
 export default (controller) => (
-  <header className='App-header'>
-    <Form
-      onChange={(number) => controller.convert(number)} />
-  </header>
+  <div className='App-header'>
+    <div className='Content'>
+      <Form
+        onChange={(number) => controller.convert(number)} />
+    </div>
+  </div>
+
 );
